@@ -11,9 +11,27 @@ class Prime:
                 return False
         return True
 
-    def generatePrime(lowerLimit, upperLimit):
+    def generatePrime(self, lowerLimit, upperLimit):
         primeList = []
         for i in range(lowerLimit, upperLimit):
-            if isPrime(i):
+            if Prime().isPrime(i):
                 primeList.append(i)
-        return primeList[random.randint(0, len(primeList) + 1)]
+        while True:
+            randSelection = random.randint(0, len(primeList) + 1)
+            if randSelection < len(primeList):
+                return primeList[randSelection]
+
+    def generatePrimitiveRoots(self, prime):
+        allRoots = []
+        for i in range(1, prime):
+            allRootsPrimitiveRoots = []
+            for j in range(0, prime - 1):
+                if (pow(i, j) % prime) not in allRoots:
+                    allRootsPrimitiveRoots.append(pow(i, j) % prime)
+            allRoots.append(allRootsPrimitiveRoots)
+        uniquePrimitiveRootList = []
+        for i in allRoots:
+            for j in i:
+                if j not in uniquePrimitiveRootList:
+                    uniquePrimitiveRootList.append(j)
+        return uniquePrimitiveRootList
