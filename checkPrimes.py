@@ -14,7 +14,7 @@ class Prime:
     def generatePrime(self, lowerLimit, upperLimit):
         primeList = []
         for i in range(lowerLimit, upperLimit):
-            if Prime().isPrime(i):
+            if self.isPrime(i):
                 primeList.append(i)
         while True:
             randSelection = random.randint(0, len(primeList) + 1)
