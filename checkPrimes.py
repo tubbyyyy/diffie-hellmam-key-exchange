@@ -33,4 +33,4 @@ class Prime:
             for j in i:
                 if j not in uniquePrimitiveRootList:
                     uniquePrimitiveRootList.append(j)
-        return uniquePrimitiveRootList[andom.randint(0, len(uniquePrimitiveRootList) + 1)]
+        return uniquePrimitiveRootList[random.randint(0, len(uniquePrimitiveRootList) + 1)]
