@@ -28,9 +28,5 @@ class Prime:
                 if (pow(i, j) % prime) not in allRoots:
                     allRootsPrimitiveRoots.append(pow(i, j) % prime)
             allRoots.append(allRootsPrimitiveRoots)
-        uniquePrimitiveRootList = []
-        for i in allRoots:
-            for j in i:
-                if j not in uniquePrimitiveRootList:
-                    uniquePrimitiveRootList.append(j)
-        return uniquePrimitiveRootList[random.randint(0, len(uniquePrimitiveRootList) + 1)]
+        allRoots = list(set(allRoots)
+        return allRoots[random.randint(0, len(allRoots) + 1)]
